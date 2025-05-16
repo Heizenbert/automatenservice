@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Automatenservice</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background: #2e6ca4; display: flex; align-items: center; justify-content: center; height: 200px; }
+        header img { max-height: 180px; width: auto; }
+        nav { background: #007BFF; color: white; padding: 0.5rem; text-align: center; }
+        nav a { color: white; margin: 0 1rem; text-decoration: none; }
+        .container { padding: 2rem; }
+        form { max-width: 600px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        label, select, input, textarea { display: block; width: 100%; margin-bottom: 1rem; }
+        button { background-color: #007BFF; color: white; padding: 0.75rem; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        footer { background: #007BFF; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+        #cookie-banner { position: fixed; bottom: 0; width: 100%; background: #222; color: #fff; padding: 1rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        #cookie-banner button { background: #007BFF; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; }
+        #cookie-banner button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:\Users\Administrator\Documents\weitere Dokumente\Logo Blau Nebeneinander.png" alt="Mehmet Kazan Automatenservice Logo">
+    </header>
+    <nav>
+        <a href="#info">Info</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#kunden">Unsere Kunden</a>
+        <a href="#impressum">Impressum</a>
+    </nav>
+
+    <div class="container" id="info">
+        <h2>Unsere Leistungen</h2>
+        <p>Wir bieten zuverlässigen Automatenservice für verschiedene Branchen – von Snacks bis Technik. Kontaktieren Sie uns für ein individuelles Angebot!</p>
+    </div>
+
+    <div class="container" id="kontakt">
+        <h2>Kontaktieren Sie uns</h2>
+        <form action="mailto:deine-email@example.com" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="betreff">Grund der Kontaktaufnahme</label>
+            <select id="betreff" name="betreff">
+                <option value="anfrage">Allgemeine Anfrage</option>
+                <option value="angebot">Angebotsanfrage</option>
+                <option value="beschwerde">Beschwerde</option>
+                <option value="support">Technischer Support</option>
+            </select>
+
+            <label for="nachricht">Nachricht</label>
+            <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
+
+            <button type="submit">Absenden</button>
+        </form>
+    </div>
+
+    <div class="container" id="kunden">
+        <h2>Unsere zufriedenen Kunden</h2>
+        <ul>
+            <li>Fitnessstudio FitPlus</li>
+            <li>Tankstelle SchnellStop</li>
+            <li>Bürozentrum Nordpark</li>
+            <li>Supermarkt Frisch & Gut</li>
+        </ul>
+    </div>
+
+    <div class="container" id="impressum">
+        <h2>Impressum</h2>
+        <p><strong>Automatenservice Mustermann</strong><br>
+        Max Mustermann<br>
+        Musterstraße 1<br>
+        12345 Musterstadt<br>
+        Telefon: 01234 / 567890<br>
+        E-Mail: deine-email@example.com<br>
+        USt-ID: DE123456789</p>
+    </div>
+
+    <footer>
+        &copy; 2025 Automatenservice Mustermann – Alle Rechte vorbehalten
+    </footer>
+
+    <div id="cookie-banner">
+        <span>Diese Website verwendet Cookies, um Ihnen das beste Erlebnis zu bieten.</span>
+        <button onclick="acceptCookies()">Verstanden</button>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            document.cookie = "cookies_accepted=true; path=/; max-age=" + 60*60*24*365;
+        }
+
+        window.onload = function() {
+            if (document.cookie.includes("cookies_accepted=true")) {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
